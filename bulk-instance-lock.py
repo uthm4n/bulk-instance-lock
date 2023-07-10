@@ -6,7 +6,7 @@ url = "https://<YOUR-MORPHEUS-APPLIANCE-URL>/api/instances?max=25&offset=0&showD
 
 headers = {
     "accept": "application/json",
-    "authorization": "Bearer <YOUR-MORPHEUS-API-TOKEN>"      # add your Morpheus API token 
+    "authorization": "Bearer <YOUR-MORPHEUS-API-TOKEN>"                           # add your Morpheus API token 
 }
 
 response = requests.get(url, headers=headers, verify=False)
@@ -18,10 +18,10 @@ for IDs in data['instances']:
 
 
 for h in instanceIDs: 
-    url = f"https://<YOUR-MORPHEUS-APPLIANCE-URL>/api/instances/{h}/lock"
+    url = f"https://<YOUR-MORPHEUS-APPLIANCE-URL>/api/instances/{h}/lock"          # change the appliance URL 
     headers = {
     "accept": "application/json",
-    "authorization": "Bearer <YOUR-MORPHEUS-API-TOKEN>"
+    "authorization": "Bearer <YOUR-MORPHEUS-API-TOKEN>"                            # add your Morpheus API token 
     }
     response = requests.put(url, headers=headers, verify=False)
     print(response.text)
